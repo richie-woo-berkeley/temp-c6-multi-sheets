@@ -251,8 +251,7 @@ function polyrevcomp(frag) {
   @customfunction
   */
   function polynucleotide(sequence, ext5, ext3, isDoubleStranded, isRNA, isCircular, mod_ext5, mod_ext3) {
-    var out = new Polynucleotide(sequence, ext5, ext3, isDoubleStranded, isRNA, isCircular, mod_ext5, mod_ext3);;
-    return out;
+    return JSON.stringify(new Polynucleotide(sequence, ext5, ext3, isDoubleStranded, isRNA, isCircular, mod_ext5, mod_ext3));
   }
   
   /**
@@ -267,7 +266,7 @@ function polyrevcomp(frag) {
   * @customfunction
   */
   function dsDNA(sequence) {
-    return new Polynucleotide(sequence, "", "", true, false, false, "hydroxyl", "hydroxyl");
+    return JSON.stringify(new Polynucleotide(sequence, "", "", true, false, false, "hydroxyl", "hydroxyl"));
   }
   
   /**
@@ -280,7 +279,7 @@ function polyrevcomp(frag) {
   * "isRNA":false,"isCircular":false,"mod_ext5":null,"
   */
   function oligo(sequence) {
-    return new Polynucleotide(sequence, null, null, false, false, false, "hydroxyl", null);
+    return JSON.stringify(new Polynucleotide(sequence, null, null, false, false, false, "hydroxyl", null));
   }
   
   /**
@@ -292,7 +291,7 @@ function polyrevcomp(frag) {
   console.log(plasmid); // Output: '{"sequence":"AGCTAGCT","ext5":null,"ext3":null,"isDoubleStranded":true,"isRNA":false,"isCircular":true,"mod_ext5":null,"mod_ext3":null}'
   */
   function plasmid(sequence) {
-    return new Polynucleotide(sequence, "", "", true, false, true, null, null);
+    return JSON.stringify(new Polynucleotide(sequence, "", "", true, false, true, null, null));
   }
   
   /**
@@ -312,7 +311,7 @@ function polyrevcomp(frag) {
       throw Error("Cannot resolve " + seqOrJSON);
     }
     
-    return new Polynucleotide(seqOrJSON, "", "", true, false, false, "hydroxyl", "hydroxyl");
+    return JSON.stringify(new Polynucleotide(seqOrJSON, "", "", true, false, false, "hydroxyl", "hydroxyl"));
   }
   
   /**
