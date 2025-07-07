@@ -36,3 +36,11 @@ function parseJSON(inputString) {
   
   return outputArray;
 }
+
+function sampleWrapper(...oldArgs) {
+  var newArgs = [];
+  for (const oldArg of oldArgs) {
+    //logic to convert to Polynucleotide object 
+  }
+  return JS_sampleWrapper(...newArgs)
+}
