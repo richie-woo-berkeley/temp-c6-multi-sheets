@@ -185,8 +185,9 @@ let featureDbGlobal = [];
 (function initializeFeatureDatabase() {
   const defaultFeatureUrl = "https://raw.githubusercontent.com/UCB-BioE-Anderson-Lab/cloning-tutorials/main/sequences/Default_Features.txt";
 
-  var response = fetch(defaultFeatureUrl).getContentText();
-  var text = response => {
+  var then1 = fetch(defaultFeatureUrl);
+  var then2 = then1 => {getContentText()};
+  var then3 = then2 => {
     const lines = text.split("\n").filter(line => line.trim().length > 0);
       featureDbGlobal = lines.map(line => {
         const [Name, Sequence, Type, Color, LabelColor, Forward, Reverse] = line.split(/\s+/);
