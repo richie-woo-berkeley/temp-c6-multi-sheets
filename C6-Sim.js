@@ -368,7 +368,7 @@ function parseCF(...blobs) {
  *
  * @returns {string} finalProduct - The predicted PCR product.
  */
-function PCR(forwardOligo, reverseOligo, template) {
+function JS_PCR(forwardOligo, reverseOligo, template) {
   // Validate that forward and reverse are single-stranded
   if (forwardOligo.isDoubleStranded) {
     throw new Error('Forward oligo must be single-stranded');

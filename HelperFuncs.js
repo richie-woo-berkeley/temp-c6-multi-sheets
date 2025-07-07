@@ -37,6 +37,14 @@ function parseJSON(inputString) {
   return outputArray;
 }
 
+function PCR(...oldArgs) {
+  var newArgs = [];
+  for (const oldArg of oldArgs) {
+    newArgs.push(new Polynucleotide(oldArg, null, null, false, false, false, "hydroxyl", null));
+  }
+  return JS_PCR(...newArgs);
+}
+
 function sampleWrapper(...oldArgs) {
   var newArgs = [];
   for (const oldArg of oldArgs) {
